@@ -12,5 +12,6 @@ pushd $QT_SOURCE_DIR
 	-hostprefix $QT_HOST_DIR \
 	-no-use-gold-linker \
 	-qt-xcb \
-	-v
+	-v \
+	|& tee $ROOT_DIR/logs/configure.log
 popd

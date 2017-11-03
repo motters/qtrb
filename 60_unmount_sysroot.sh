@@ -6,10 +6,14 @@ echo
 echo '---------------------------------'
 echo 'Unmount sysroot'
 echo '---------------------------------'
-pushd $ROOT_DIR
-sudo umount $SYSROOT/sys
-sudo umount $SYSROOT/dev
-sudo umount $SYSROOT/proc
 
-sudo umount $SYSROOT
-sudo losetup -d /dev/loop0
+pushd $ROOT_DIR
+
+	# Un mount
+	sudo umount $SYSROOT/sys
+	sudo umount $SYSROOT/dev
+	sudo umount $SYSROOT/proc
+
+	# Un mount sysroot folder and destroy loop device
+	sudo umount $SYSROOT
+	sudo losetup -d /dev/loop0

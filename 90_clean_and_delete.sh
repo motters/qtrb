@@ -5,6 +5,8 @@ echo
 echo '---------------------------------'
 echo 'Clean and delete build'
 echo '---------------------------------'
+
+# Remove build folders
 rm -rf $QT_HOST_DIR
 rm -rf $QT_OUTPUT_DIR
 rm -rf $QT_SOURCE_DIR/config.*

@@ -9,10 +9,14 @@ if len(sys.argv) != 2:
     print("Usage is " + sys.argv[0] + "<directory>")
     sys.exit(1)
 
+# Get path of sysroot for pi
 topdir = sys.argv[1]
 topdir = os.path.abspath(topdir)
+
+# Folders requiring symlink updates
 needCorrecting = ["/usr/include/", "/opt/vc/", "/usr/lib/", "/lib/"]
 
+# Function to replace the abolute symlinks with relative ones
 def handlelink(filep, subdir):
     link = os.readlink(filep)
     if link[0] != "/":
@@ -24,6 +28,7 @@ def handlelink(filep, subdir):
     os.unlink(filep)
     os.symlink(os.path.relpath(topdir+link, subdir), filep)
 
+# Function to find relative files within folders
 def handleDir(topSubDir):
     for subdir, dirs, files in os.walk(topdir+topSubDir):
         for f in files:
@@ -32,6 +37,7 @@ def handleDir(topSubDir):
 	        #print("Considering %s" % filep)
 	        handlelink(filep, subdir)
 
+# Loop though folders requiring symlink update
 for topSubDir in needCorrecting:
     handleDir(topSubDir)
 

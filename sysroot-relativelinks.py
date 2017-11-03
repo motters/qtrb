@@ -32,10 +32,10 @@ def handlelink(filep, subdir):
 def handleDir(topSubDir):
     for subdir, dirs, files in os.walk(topdir+topSubDir):
         for f in files:
-	    filep = os.path.join(subdir, f)
-	    if os.path.islink(filep):
-	        #print("Considering %s" % filep)
-	        handlelink(filep, subdir)
+    	    filep = os.path.join(subdir, f)
+    	    if os.path.islink(filep):
+    	        #print("Considering %s" % filep)
+    	        handlelink(filep, subdir)
 
 # Loop though folders requiring symlink update
 for topSubDir in needCorrecting:

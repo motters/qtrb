@@ -10,3 +10,6 @@ set -e
 
 # Download raspbian OS
 ./13_download_raspbian.sh
+
+# Download sysroot image
+./14_download_sysroot.sh

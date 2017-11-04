@@ -1,0 +1,1 @@
+sudo raspi-config nonint do_expand_rootfs

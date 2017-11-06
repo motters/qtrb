@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
 
 	# Run headless
 	config.vm.provider "virtualbox" do |v|
-		v.gui = true
+		v.gui = false
 		v.name = "Qtrb"
 		v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
 		v.memory = 1024
@@ -12,10 +12,10 @@ Vagrant.configure("2") do |config|
 	# Basic ubuntu 64 bit machine 
   	config.vm.box = "ubuntu/xenial64"
 	
-	# Share the script folder
-	config.vm.synced_folder "scripts/", "/home/vagrant/qtrb/scripts", owner: "vagrant", group: "vagrant"
+	# Share the script folder , owner: "vagrant", group: "vagrant"
+	config.vm.synced_folder "scripts/", "/home/vagrant/qtrb/scripts"
 
 	# Share the build folder 
-	config.vm.synced_folder "build/", "/opt/qtrb", owner: "vagrant", group: "vagrant"
+	config.vm.synced_folder "build/", "/opt/qtrb"
 
 end

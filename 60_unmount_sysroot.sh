@@ -17,3 +17,6 @@ pushd $ROOT_DIR
 	# Un mount sysroot folder and destroy loop device
 	sudo umount $SYSROOT
 	sudo losetup -d /dev/loop0
+
+popd
+

@@ -36,6 +36,9 @@ QT_HOST_DIR=$ROOT_DIR/qt-linux-rasp-pi3 # OUTPUT_HOST_DIR
 SYSROOT=$ROOT_DIR/sysroot
 
 
+
+
+
 # Raspbian OS location for download
 RASBPIAN_URL=https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-09-08/2017-09-07-raspbian-stretch.zip
 

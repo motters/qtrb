@@ -16,3 +16,6 @@ pushd $ROOT_DIR
 
 	# Copy the compiled version of qt to sysroot
 	sudo cp -r $QT_OUTPUT_DIR $SYSROOT_QT_DEVICE_DIR
+
+popd
+

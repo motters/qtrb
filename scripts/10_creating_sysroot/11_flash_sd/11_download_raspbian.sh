@@ -8,7 +8,7 @@ echo 'Retrieve Raspbian image'
 echo '---------------------------------'
 
 pushd $ROOT_DIR
-
+	echo RASPBIAN_ZIP_FILENAME
 	# Download raspbian OS
 	if [ ! -d $RASPBIAN_ZIP_FILENAME ] ; then
 	    echo 'Download image from raspberrypi.org'
@@ -16,6 +16,8 @@ pushd $ROOT_DIR
 	else
 	    echo "$RASPBIAN_ZIP_FILENAME is downloaded"
 	fi
+
+	sudo apt-get install zip
 
 	# Extract the raspbian OS
 	if [ ! -d $RASPBIAN_IMG_FILENAME ] ; then

@@ -1,6 +1,5 @@
 # Script root output location
-ROOT_DIR=/opt/qtrb
-
+ROOT_DIR=/opt/qtrb_v2
 
 
 

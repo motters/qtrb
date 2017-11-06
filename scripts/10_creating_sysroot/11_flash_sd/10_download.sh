@@ -6,7 +6,7 @@ set -e
 # Create folder folder for build
 if [ ! -d "$ROOT_DIR" ] ; then
 	sudo mkdir $ROOT_DIR
-	sudo chown electronics:electronics $ROOT_DIR 
+	sudo chown ubuntu:ubuntu $ROOT_DIR 
 fi
 
 # Download raspbian OS

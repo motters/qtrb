@@ -1,5 +1,5 @@
 #!/bin/bash
-source ${0%/*}/config.sh
+source ${0%/*}/../config.sh
 set -e
 
 pushd $QT_SOURCE_DIR

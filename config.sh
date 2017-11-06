@@ -68,7 +68,7 @@ SYSROOT_HOSTED_IMG_FILEPATH=https://github.com/GuillaumeLazar/qtrb/releases/down
 
 
 # Version for package to be exported at end of process
-PCK_VERSION=v0.1_arm
+PCK_VERSION=v0.1
 
 # Location for package to be exported at end of process
 PCK_DIR=$ROOT_DIR/packages

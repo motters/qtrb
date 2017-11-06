@@ -9,7 +9,7 @@ echo '---------------------------------'
 
 pushd $ROOT_DIR
 
-	# Download sysroot image
+	# Download sysroot image if there is not one present
 	if [ ! $SYSROOT_IMG_FILEPATH ] ; then
 	    echo 'Download image from github'
 	    wget $SYSROOT_HOSTED_IMG_FILEPATH
@@ -17,7 +17,7 @@ pushd $ROOT_DIR
 	    echo "$SYSROOT_HOSTED_IMG_FILEPATH is already in folder"
 	fi
 
-	# Extract the sysroot image
+	# Extract the sysroot image from the supplied zip
 	if [ ! $RASPBIAN_IMG_FILENAME ] ; then
 	    echo 'Extract image from zile file'
 	    unzip $SYSROOT_HOSTED_IMG_FILENAME

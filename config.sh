@@ -3,13 +3,12 @@ ROOT_DIR=/opt/qtrb_v2
 
 
 
+
 # Location of pi tool chain
 TOOLCHAIN_DIR=$ROOT_DIR/toolchain
 
-
 # Which compiler should be used
 CROSS_COMPILE=$TOOLCHAIN_DIR/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-
-
 
 # Job count for build
 JOB_COUNT=10

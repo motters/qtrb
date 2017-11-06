@@ -8,23 +8,24 @@ echo 'Retrieve Raspbian image'
 echo '---------------------------------'
 
 pushd $ROOT_DIR
-	echo RASPBIAN_ZIP_FILENAME
+
 	# Download raspbian OS
-	if [ ! -d $RASPBIAN_ZIP_FILENAME ] ; then
+	if [ ! -f $RASPBIAN_ZIP_FILENAME ] ; then
 	    echo 'Download image from raspberrypi.org'
 	    wget $RASBPIAN_URL
 	else
 	    echo "$RASPBIAN_ZIP_FILENAME is downloaded"
 	fi
 
+	# Install unzip
 	sudo apt-get install zip
 
 	# Extract the raspbian OS
-	if [ ! -d $RASPBIAN_IMG_FILENAME ] ; then
+	if [ ! -f $RASPBIAN_IMG_FILENAME ] ; then
 	    echo 'Extract image from zile file'
-	    unzip $RASPBIAN_IMG_FILENAME
+	    unzip $RASPBIAN_ZIP_FILENAME
 	else
-	    echo "$RASPBIAN_IMG_FILENAME is extracted"
+	    echo "$RASPBIAN_ZIP_FILENAME is extracted"
 	fi
 
 popd

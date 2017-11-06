@@ -18,5 +18,8 @@ pushd $ROOT_DIR
 	sudo umount $SYSROOT
 	sudo losetup -d /dev/loop0
 
+	# Delete sysroot folder
+	sudo rm -r $SYSROOT	
+
 popd
 

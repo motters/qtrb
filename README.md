@@ -25,6 +25,12 @@ First run the below to startup the virtual machine
 vagrant up
 ```
 
+Next ssh into the VM
+
+```
+vagrant ssh
+```
+
 ### Stage 2: Creating a sysroot
 
 This stage is to create a sysroot img that will be used during compiling Qt and in the end image. If you want to skip this step you can download a sysroot from [the official QtRb repo release page]().
@@ -47,13 +53,13 @@ To build Qt (generating "qt-linux-rasp-pi3" and "qt5pi") following the quide in 
 Now that Qt has compiled the next step is to copy the compiled Qt libraries in "qt5pi" to the sysroot image. 
 
 ```
-
+./scripts/30_final_image/10_deploy_to_sysroot.sh
 ```
 
 Once the above has finished the next stage is to backup the packages you have generated. Run the below to backup all the relevant files and folders.
 
 ```
-
+./scripts/30_final_image/20_generate_packages.sh
 ```
 
 ### Stage 4: Cleanup
@@ -61,14 +67,15 @@ Once the above has finished the next stage is to backup the packages you have ge
 This stage will clean the VM ready for future builds
 
 ```
-
+./scripts/50_clean_build/10_unmount_sysroot.sh
+./scripts/50_clean_build/20_clean_and_delete.sh
 ```
 
 ### Stage 4: Flashing new image
 
 Whoou, you've finished all the hard stuff! Now all you have to do is flash the new Raspbian OS image an SD card and plug it into your Raspberry Pi.
 
-The easiest way to do this is to download Etcher and burn the image file located in the build folder of QtRb-VM Directory to an SD card.
+The easiest way to do this is to download Etcher and burn the image file located in the "build" folder of QtRb-VM directory to an SD card.
 
 ## Testing Program
 

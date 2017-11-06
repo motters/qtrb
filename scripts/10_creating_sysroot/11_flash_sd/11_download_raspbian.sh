@@ -1,5 +1,5 @@
 #!/bin/bash
-source ${0%/*}/config.sh
+source ${0%/*}/../../config.sh
 set -e
 
 echo
@@ -10,7 +10,7 @@ echo '---------------------------------'
 pushd $ROOT_DIR
 
 	# Download raspbian OS
-	if [ ! $RASPBIAN_ZIP_FILENAME ] ; then
+	if [ ! -d $RASPBIAN_ZIP_FILENAME ] ; then
 	    echo 'Download image from raspberrypi.org'
 	    wget $RASBPIAN_URL
 	else
@@ -18,7 +18,7 @@ pushd $ROOT_DIR
 	fi
 
 	# Extract the raspbian OS
-	if [ ! $RASPBIAN_IMG_FILENAME ] ; then
+	if [ ! -d $RASPBIAN_IMG_FILENAME ] ; then
 	    echo 'Extract image from zile file'
 	    unzip $RASPBIAN_IMG_FILENAME
 	else

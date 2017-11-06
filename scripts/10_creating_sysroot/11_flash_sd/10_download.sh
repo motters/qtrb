@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ${0%/*}/config.sh
+source ${0%/*}/../../config.sh
 set -e
 
 # Create folder folder for build
@@ -10,5 +10,4 @@ if [ ! -d "$ROOT_DIR" ] ; then
 fi
 
 # Download raspbian OS
-./11_download_raspbian.sh
-
+./${0%/*}/11_download_raspbian.sh

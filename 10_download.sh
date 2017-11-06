@@ -13,3 +13,6 @@ set -e
 
 # Download sysroot image
 ./14_download_sysroot.sh
+
+# Copy scripts
+./15_copy_scripts.sh

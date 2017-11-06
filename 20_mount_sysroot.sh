@@ -37,8 +37,10 @@ pushd $ROOT_DIR
 	# Install required libs on pi img
 	sudo chroot $SYSROOT /bin/bash -c 'apt install -y libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev'
 	sudo chroot $SYSROOT /bin/bash -c 'apt install -y libxcb1 libxcb1-dev libx11-xcb1 libx11-xcb-dev libxcb-keysyms1 libxcb-keysyms1-dev libxcb-image0 libxcb-image0-dev libxcb-shm0 libxcb-shm0-dev libxcb-icccm4 libxcb-icccm4-dev libxcb-sync1 libxcb-sync-dev libxcb-render-util0 libxcb-render-util0-dev libxcb-xfixes0-dev libxrender-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-glx0-dev libxcb-xinerama0-dev'
+	
 
 	# Fix symlinks
 	chmod u+x $ROOT_DIR/sysroot-relativelinks.py
-	./sysroot-relativelinks.py $ROOT_DIR/sysroot
+	sudo ./sysroot-relativelinks.py $ROOT_DIR/sysroot |& tee $ROOT_DIR/logs/relativelinks.log
 popd 
+

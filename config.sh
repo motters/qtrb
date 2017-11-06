@@ -7,8 +7,10 @@ ROOT_DIR=/opt/qtrb
 # Location of pi tool chain
 TOOLCHAIN_DIR=$ROOT_DIR/toolchain
 
+
 # Which compiler should be used
 CROSS_COMPILE=$TOOLCHAIN_DIR/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-
+
 
 # Job count for build
 JOB_COUNT=10
@@ -66,7 +68,7 @@ SYSROOT_HOSTED_IMG_FILEPATH=https://github.com/GuillaumeLazar/qtrb/releases/down
 
 
 # Version for package to be exported at end of process
-PCK_VERSION=v0.1
+PCK_VERSION=v0.1_arm
 
 # Location for package to be exported at end of process
 PCK_DIR=$ROOT_DIR/packages

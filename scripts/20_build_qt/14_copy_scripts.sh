@@ -7,6 +7,8 @@ echo '---------------------------------'
 echo 'Coping scripts '
 echo '---------------------------------'
 
-
-cp -b sysroot-relativelinks.py $ROOT_DIR
+# Copy relativelink script
+if [ ! -f $ROOT_DIR/sysroot-relativelinks.py ] ; then
+	cp -b ${0%/*}/sysroot-relativelinks.py $ROOT_DIR
+fi
 

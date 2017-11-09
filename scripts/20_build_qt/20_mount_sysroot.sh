@@ -40,6 +40,6 @@ pushd $ROOT_DIR
 	
 	# Fix symlinks
 	chmod u+x $ROOT_DIR/sysroot-relativelinks.py
-	sudo ./sysroot-relativelinks.py $ROOT_DIR/sysroot |& tee $ROOT_DIR/logs/relativelinks.log
+	sudo ./${0%/*}/sysroot-relativelinks.py $ROOT_DIR/sysroot |& tee $ROOT_DIR/logs/relativelinks.log
 popd 
 

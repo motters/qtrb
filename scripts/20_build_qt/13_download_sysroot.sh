@@ -10,17 +10,19 @@ echo '---------------------------------'
 pushd $ROOT_DIR
 
 	# Download sysroot image if there is not one present
-	if [ ! -f $SYSROOT_IMG_FILEPATH ] ; then
+	if [ ! -f $SYSROOT_HOSTED_IMG_FILEPATH ] ; then
 	    echo 'Download image from github'
-	    wget $SYSROOT_HOSTED_IMG_FILEPATH
+	    sudo wget $SYSROOT_HOSTED_IMG_FILEURL
 	else
 	    echo "$SYSROOT_HOSTED_IMG_FILEPATH is already in folder"
 	fi
 
 	# Extract the sysroot image from the supplied zip
-	if [ ! -f $RASPBIAN_IMG_FILENAME ] ; then
+	if [ ! -f $SYSROOT_IMG_FILEPATH ] ; then
 	    echo 'Extract image from zile file'
-	    unzip $SYSROOT_HOSTED_IMG_FILENAME
+	    sudo unzip $SYSROOT_HOSTED_IMG_ZIPPATH $SYSROOT_HOSTED_IMG_ZIP_IMGPATH -d /$ROOT_DIR
+	    sudo mv $ROOT_DIR/$SYSROOT_HOSTED_IMG_ZIP_IMGPATH $ROOT_DIR
+	    sudo rm -r $ROOT_DIR/opt
 	else
 	    echo "$SYSROOT_HOSTED_IMG_FILENAME is already in folder"
 	fi

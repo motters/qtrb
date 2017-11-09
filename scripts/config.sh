@@ -59,12 +59,18 @@ SYSROOT_IMG_FILEPATH=$ROOT_DIR/$SYSROOT_IMG_FILENAME
 # Location of qt binarys relative to host
 SYSROOT_QT_DEVICE_DIR=$SYSROOT$QT_DEVICE_DIR
 
-# Hosted version of sysroot image name
-SYSROOT_HOSTED_IMG_FILENAME=qtrb_v0.1.img
 
 # Hosted version of sysroot image url
-SYSROOT_HOSTED_IMG_FILEPATH=https://github.com/GuillaumeLazar/qtrb/releases/download/v0.1/qtrb_sysroot_v0.1.zip
+SYSROOT_HOSTED_IMG_FILEURL=https://github.com/GuillaumeLazar/qtrb/releases/download/v0.1/qtrb_sysroot_v0.1.zip
 
+# Hosted version of sysroot zip name
+SYSROOT_HOSTED_IMG_ZIPNAME=qtrb_sysroot_v0.1.zip
+
+# Hosted version of sysroot image path
+SYSROOT_HOSTED_IMG_ZIPPATH=$ROOT_DIR/$SYSROOT_HOSTED_IMG_ZIPNAME
+
+# Hosted version of sysroot image path
+SYSROOT_HOSTED_IMG_ZIP_IMGPATH=opt/qtrb/$SYSROOT_IMG_FILENAME
 
 
 
